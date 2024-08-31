@@ -15,6 +15,9 @@ class Brand(models.Model):
     '''Represents the brand of the PC equipment'''
     name = models.CharField(max_length = 100)
 
+    def __str__(self) -> str:
+        return self.name
+
     class Meta:
         verbose_name = 'Brand'
         verbose_name_plural = 'Brand'
