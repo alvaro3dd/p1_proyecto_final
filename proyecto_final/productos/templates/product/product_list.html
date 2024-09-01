@@ -15,9 +15,12 @@
     </form>
     <ul>
         {% for object in object_list %}
-            {% if object.name %}
-                <li>{{ object.name | upper }}, {{ object.brand }}</li>
-            {% endif %}
+        <li>{{ object.name | upper }}, {{ object.brand }}
+                <a href="{% url 'productos:product_detail' object.id %}"> Detalle </a>
+                <a href="{% url 'productos:product_update' object.id %}"> Modificar </a>
+                <a href="{% url 'productos:product_delete' object.id %}"> Borrar </a>
+        </li>
+           
         {% empty %}
             <p>No hay registros</p>
         {% endfor %}
