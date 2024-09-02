@@ -16,6 +16,9 @@ urlpatterns = [
 
 
   ##NEW Paths Class-Based View (CBV)
+
+
+ # ******* PRODUCTS 
     path(
         'product/list',
         views.ProductList.as_view(),
@@ -46,7 +49,27 @@ urlpatterns = [
         name='product_delete',
     ),
 
+
+ # ******* Category
   
+    path(
+        'category/list',
+        views.CategoryList.as_view(),
+        name = 'category_list'
+    ),
+
+
+ # ******* Category
+  
+    path(
+        'brand/list',
+        views.BrandList.as_view(),
+        name = 'brand_list'
+    )
+
+
+
+
 
 
 ]

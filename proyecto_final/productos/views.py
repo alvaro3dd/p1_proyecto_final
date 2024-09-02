@@ -1,11 +1,13 @@
 from django.shortcuts import render,redirect
 
 from .forms import ProductForm
-from .models import Product
+from .models import Product, Category, Brand
 
 from django.urls import reverse_lazy  ## Class Views
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView ## Class Views
 
+
+# **** General index
 
 def index(request):
     return render(request,'product/index.html')
@@ -112,3 +114,34 @@ class ProductDelete(DeleteView):
     model = Product
     template_name = 'product/product_confirm_delete.html' ## Preguntar como arreglar
     success_url = reverse_lazy('productos:product_list')
+
+
+
+
+# ******* Category (Class views)
+
+class CategoryList(ListView):
+    model = Category
+    template_name = 'product/category_list.html'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        q = self.request.GET.get('q')
+        if q:
+            queryset = Category.objects.filter(name__icontains=q)
+        return queryset 
+
+
+
+# ******* Brand (Class views)
+
+class BrandList(ListView):
+    model = Brand
+    template_name = 'product/brand_list.html'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        q = self.request.GET.get('q')
+        if q:
+            queryset = Brand.objects.filter(name__icontains=q)
+        return queryset 

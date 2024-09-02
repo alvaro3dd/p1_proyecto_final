@@ -6,5 +6,7 @@
 
 
 {% block main %}
-    <button><a href="{% url 'productos:product_list' %}">Listar productos</a></button>
+    <button><a href="{% url 'productos:product_list' %}">Lista de productos</a></button>
+    <button><a href="{% url 'productos:category_list' %}">Lista de Cateogrias</a></button>
+    <button><a href="{% url 'productos:brand_list' %}">Lista de Marcas</a></button>
 {% endblock main %}
