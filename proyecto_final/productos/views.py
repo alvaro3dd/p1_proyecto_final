@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 
-from .forms import ProductForm
+from .forms import ProductForm, CategoryForm ,BrandForm
 from .models import Product, Category, Brand
 
 from django.urls import reverse_lazy  ## Class Views
@@ -131,6 +131,12 @@ class CategoryList(ListView):
             queryset = Category.objects.filter(name__icontains=q)
         return queryset 
 
+class CategoryCreate(CreateView):
+    model = Category
+    from_class = CategoryForm
+    success_url = reverse_lazy('productos:category_list')
+    template_name = 'product/category_form.html' ## Preguntar como arreglar
+    fields = '__all__' #['name', 'description', 'price'] 
 
 
 # ******* Brand (Class views)
@@ -145,3 +151,12 @@ class BrandList(ListView):
         if q:
             queryset = Brand.objects.filter(name__icontains=q)
         return queryset 
+    
+
+
+class BrandCreate(CreateView):
+    model = Brand
+    from_class = BrandForm
+    success_url = reverse_lazy('productos:brand_list')
+    template_name = 'product/brand_form.html' ## Preguntar como arreglar
+    fields = '__all__' #['name', 'description', 'price'] 

@@ -9,6 +9,9 @@
     <form action="{% url 'productos:brand_list' %}" method="get">
         <input type="text" name="q" placeholder="Buscar..." />
         <button type="submit">Buscar</button>
+        <button>
+            <a href="{% url 'productos:brand_create' %}">Crear Registro</a>
+        </button>
     </form>
     <ul>
         {% for object in object_list %}

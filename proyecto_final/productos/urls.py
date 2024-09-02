@@ -58,6 +58,11 @@ urlpatterns = [
         name = 'category_list'
     ),
 
+    path(
+        'category/create',
+        views.CategoryCreate.as_view(),
+        name='category_create',
+    ),
 
  # ******* Category
   
@@ -65,7 +70,13 @@ urlpatterns = [
         'brand/list',
         views.BrandList.as_view(),
         name = 'brand_list'
-    )
+    ),
+
+    path(
+        'brand/create',
+        views.BrandCreate.as_view(),
+        name='brand_create',
+    ),
 
 
 
