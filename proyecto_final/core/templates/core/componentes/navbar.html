@@ -1,10 +1,23 @@
 
 
-<div style="margin-bottom: 2%; display: flex; justify-content: center; gap: 1%; background-color: rgb(21, 87, 8);">
+<div style="margin-bottom: 2%; 
+            display: flex; justify-content: center;
+            gap: 1%; background-color: rgb(21, 87, 8);">
     <button>
         <a href="{% url 'core:index' %}">🏠Home</a>
-    </button>
-    <button>
-        <a href="{% url 'productos:index' %}">Productos</a>
-    </button>
+        {% if user.is_authenticated %}
+        <button>
+            <a href="{% url 'productos:index' %}">Productos</a>
+        </button>
+        
+        <button>{{ user.username }}</button>
+        <form action="{% url 'core:logout' %}" method="post"> 
+            {% csrf_token %} <button type="submit">Logout</button> </form>
+            
+        {% else %}
+        <a href="{% url 'core:login' %}"> <button>Login</button></a>
+        
+        {% endif %}
+
+   
 </div>
