@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
-        mode = User
+        model = User
         fields = ('username', 'password1', 'password2')
 
 
