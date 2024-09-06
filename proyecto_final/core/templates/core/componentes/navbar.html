@@ -9,8 +9,11 @@
         <button>
             <a href="{% url 'productos:index' %}">Productos</a>
         </button>
+
         
-        <button>{{ user.username }}</button>
+        <a href="{% url 'core:profile' %}"> <button>{{ user.username }}</button></a>
+       
+        
         <form action="{% url 'core:logout' %}" method="post"> 
             {% csrf_token %} <button type="submit">Logout</button> </form>
             

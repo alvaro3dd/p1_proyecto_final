@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'productos',
+    'ventas',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = reverse_lazy('core:login')
 # URL a la que se redirige después de un inicio de sesión exitoso
 LOGIN_REDIRECT_URL = reverse_lazy('core:index')
+
+
+# MEDIA_ROOT sirve para indicar la ruta donde se almacenarán los archivos multimedia
+MEDIA_ROOT = BASE_DIR / 'media'
+# MEDIA_URL indica la URL pública desde donde se podrán acceder a los archivos multimedia
+MEDIA_URL = '/media/'
