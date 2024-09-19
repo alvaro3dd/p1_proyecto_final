@@ -142,6 +142,19 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = BASE_DIR / 'static'
 
+###
+import os
+from pathlib import Path
+
+# Directory where static files will be collected
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Additional directories to search for static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'proyecto_final/core/static'),
+]
+
+####
 
 try:
     # Imprta la configuración de desarrollo cuando el archivo esté
