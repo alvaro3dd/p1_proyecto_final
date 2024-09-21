@@ -33,9 +33,21 @@ class Product(models.Model):
     specs = models.JSONField(null=True, blank=True)  # To store specifications like RAM, Storage, etc.
     image = models.ImageField(upload_to='product_images/', null=True, blank=True)
 
-    def __str__(self):
-        return self.name
+    def __str__(self) -> str:
+        return f'{self.name} ({self.brand}) ({self.stock_quantity}) ${self.price:.2f}'
 
     class Meta:
         verbose_name = 'Producto'
         verbose_name_plural = 'Producto'
+
+    def disminuir_stock(self, cantidad):
+        """cantidad es enviado desde el modelo Venta"""
+        if self.stock_quantity >= cantidad:
+            self.stock_quantity -= cantidad
+            self.save()
+        else:
+            raise ValueError('No hay suficiente stock disponible')
+
+    def aumentar_stock(self, cantidad):
+        self.stock_quantity += cantidad
+        self.save()
