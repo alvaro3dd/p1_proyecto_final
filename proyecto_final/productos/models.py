@@ -31,6 +31,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     specs = models.JSONField(null=True, blank=True)  # To store specifications like RAM, Storage, etc.
+    image = models.ImageField(upload_to='product_images/', null=True, blank=True)
 
     def __str__(self):
         return self.name

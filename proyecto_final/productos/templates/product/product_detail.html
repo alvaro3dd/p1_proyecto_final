@@ -1,17 +1,30 @@
 {% extends 'core/base.html' %}
 
+{% load static %}  {# Load static files #}
+
 {% block header %}
-    App Productos: Vista en Detalle de Productos
+    Detalle del Producto: {{ product.name }}
 {% endblock header %}
 
 {% block main %}
-    <ul>
-       <li>Nombre: {{ object.name }}</li>
-       <li>Descripción: {{ object.description }}</li>
-       <li>Marca: {{ object.brand }}</li>
-       <li>Precio: {{ object.price }}</li>
-    </ul>
-    <button>
-        <a href="{% url 'productos:product_list' %}">Volver</a>
-    </button>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" class="img-fluid rounded" alt="{{ product.name }}">
+            {% else %}
+                <img src="{% static 'img/core/no-image.png' %}" class="img-fluid rounded" alt="No Image Available">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <h2>{{ product.name }}</h2>
+            <p><strong>Marca:</strong> {{ product.brand }}</p>
+            <p><strong>Descripción:</strong> {{ product.description }}</p>
+            <!-- Add additional product details here -->
+            <a href="{% url 'productos:product_update' product.id %}" class="btn btn-warning">Modificar</a>
+            <a href="{% url 'productos:product_delete' product.id %}" class="btn btn-danger">Borrar</a>
+            <a href="{% url 'productos:product_list' %}" class="btn btn-secondary">Volver a la lista</a>
+        </div>
+    </div>
+</div>
 {% endblock main %}
