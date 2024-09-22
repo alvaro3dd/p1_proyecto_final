@@ -2,32 +2,55 @@
 {% load static %}
 
 {% block header %}
-    About 
+    Discover more about me and the company.
 {% endblock header %}
 
 {% block main %}
+<!-- About Me Section -->
 <section class="py-5 bg-light" id="scroll-target">
     <div class="container px-5 my-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6">
-                <img class="img-fluid rounded mb-5 mb-lg-0" src="{% static 'core/img/alvaro.jpeg' %}" alt="..." />
+                <img class="img-fluid rounded mb-5 mb-lg-0" src="{% static 'core/img/alvaro.jpeg' %}" alt="About Me" />
             </div>
             <div class="col-lg-6">
-                <h2 class="fw-bolder">About me</h2>
-                <p class="lead fw-normal text-muted mb-0">Soy un profesional dedicado y orientado a los detalles, con más de 8 años de experiencia en operaciones de negocio dentro de entornos de startups. Me especializo en el crecimiento 
-                    y la eficiencia operativa, liderando estrategias para optimizar el rendimiento. Cuento con un título en Administración de Empresas y un posgrado en Finanzas. He trabajado en roles clave en empresas como Beat App, 
-                    Rappi, y actualmente en NinjaOne como Data Specialist.</p>
+                <h2 class="fw-bolder">About Me</h2>
+                <p class="lead fw-normal text-muted mb-0">
+                    Profesional con más de **8 años** de experiencia en operaciones de negocio en entornos de startups. 
+                    Experto en crecimiento y eficiencia operativa, liderando estrategias que optimizan el rendimiento. 
+                    Posee un título en Administración de Empresas y un posgrado en Finanzas. 
+                    Experiencia en roles clave en empresas reconocidas como Beat App, Rappi y actualmente en NinjaOne como Data Specialist.
+                </p>
                 
                 <!-- LinkedIn Button -->
                 <a href="https://www.linkedin.com/in/alvarocancino/" class="btn btn-primary mt-3" target="_blank">
-                    <strong>LinkedIn</strong>
+                    <i class="fab fa-linkedin"></i> <strong>LinkedIn</strong>
                 </a>
                 <!-- Github Button -->
                 <a href="https://github.com/alvaro3dd" class="btn btn-dark mt-3" target="_blank">
-                    <strong>Github</strong>
-
-
+                    <i class="fab fa-github"></i> <strong>Github</strong>
                 </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About the Company Section -->
+<section class="py-5 bg-light" id="scroll-target">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <img class="img-fluid rounded mb-5 mb-lg-0" src="{% static 'core/img/business.jpg' %}" alt="About Company" />
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bolder">About the Company</h2>
+                <p class="lead fw-normal text-muted mb-0">
+                    BucaTech es una página web especializada en la venta de componentes de computación, diseñada para satisfacer las necesidades de entusiastas de la tecnología, gamers y profesionales del sector. 
+                    A continuación, se detallan las características principales de la página:
+                    <br><br>
+                    BucaTech se posiciona como una opción confiable para quienes buscan componentes de computación de alta calidad, con un enfoque en la satisfacción del cliente y una experiencia de compra fluida. 
+                    Su compromiso con la tecnología y la innovación la convierte en una elección destacada en el mercado de la computación.
+                </p>
             </div>
         </div>
     </div>
