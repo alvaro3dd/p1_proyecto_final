@@ -3,6 +3,7 @@ from django.db import models
 class Category(models.Model):
     ''' Groups the products into categories like "Laptops", "Monitors", etc.'''
     name = models.CharField(max_length=100)
+    description = models.TextField()
 
     def __str__(self) -> str:
         return self.name
@@ -14,6 +15,7 @@ class Category(models.Model):
 class Brand(models.Model):
     '''Represents the brand of the PC equipment'''
     name = models.CharField(max_length = 100)
+    description = models.TextField()
 
     def __str__(self) -> str:
         return self.name

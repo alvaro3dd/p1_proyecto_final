@@ -64,7 +64,25 @@ urlpatterns = [
         name='category_create',
     ),
 
- # ******* Category
+    path(
+        'category/detail/<int:pk>',
+        views.CategoryDetail.as_view(),
+        name='category_detail',
+    ),
+
+     path(
+        'category/update/<int:pk>',
+        views.CategoryUpdate.as_view(),
+        name='category_update',
+    ),
+
+    path(
+        'category/delete/<int:pk>',
+        views.CategoryDelete.as_view(),
+        name='category_delete',
+    ),
+
+ # ******* Brand 
   
     path(
         'brand/list',
@@ -78,7 +96,23 @@ urlpatterns = [
         name='brand_create',
     ),
 
+    path(
+        'brand/detail/<int:pk>',
+        views.BrandDetail.as_view(),
+        name='brand_detail',
+    ),
 
+    path(
+        'brand/update/<int:pk>',
+        views.BrandUpdate.as_view(),
+        name='brand_update',
+    ),
+
+    path(
+        'brand/delete/<int:pk>',
+        views.BrandDelete.as_view(),
+        name='brand_delete',
+    ),
 
 
 

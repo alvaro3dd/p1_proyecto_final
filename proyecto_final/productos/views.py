@@ -116,8 +116,6 @@ class ProductDelete(DeleteView):
     success_url = reverse_lazy('productos:product_list')
 
 
-
-
 # ******* Category (Class views)
 
 class CategoryList(ListView):
@@ -139,6 +137,26 @@ class CategoryCreate(CreateView):
     fields = '__all__' #['name', 'description', 'price'] 
 
 
+class CategoryDetail(DetailView):
+    model = Category
+    # context_object_name = 'object'
+    template_name = 'product/category_detail.html' ## Preguntar como arreglar
+
+
+class CategoryUpdate(UpdateView):
+    model = Category
+    from_class = CategoryForm
+    # context_object_name = 'object'
+    template_name = 'product/category_form.html' ## Preguntar como arreglar
+    success_url = reverse_lazy('productos:category_list')
+    fields = '__all__' #['name', 'description', 'price'] 
+
+class CategoryDelete(DeleteView):
+    model = Category
+    template_name = 'product/category_confirm_delete.html' ## Preguntar como arreglar
+    success_url = reverse_lazy('productos:category_list')
+
+
 # ******* Brand (Class views)
 
 class BrandList(ListView):
@@ -151,8 +169,6 @@ class BrandList(ListView):
         if q:
             queryset = Brand.objects.filter(name__icontains=q)
         return queryset 
-    
-
 
 class BrandCreate(CreateView):
     model = Brand
@@ -160,3 +176,22 @@ class BrandCreate(CreateView):
     success_url = reverse_lazy('productos:brand_list')
     template_name = 'product/brand_form.html' ## Preguntar como arreglar
     fields = '__all__' #['name', 'description', 'price'] 
+
+class BrandDetail(DetailView):
+    model = Brand
+    # context_object_name = 'object'
+    template_name = 'product/brand_detail.html' ## Preguntar como arreglar
+
+
+class BrandUpdate(UpdateView):
+    model = Brand
+    from_class = BrandForm
+    # context_object_name = 'object'
+    template_name = 'product/brand_form.html' ## Preguntar como arreglar
+    success_url = reverse_lazy('productos:category_list')
+    fields = '__all__' #['name', 'description', 'price'] 
+
+class BrandDelete(DeleteView):
+    model = Brand
+    template_name = 'product/brand_confirm_delete.html' ## Preguntar como arreglar
+    success_url = reverse_lazy('productos:brand_list')

@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Productos: Creación de Marcas
+{% endblock header %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">
+            Enviar
+        </button>
+    </form>
+    <button>
+        <a href="{% url 'productos:index' %}">Volver</a>
+    </button>
+{% endblock main %}
+

@@ -1,16 +1,16 @@
 {% extends 'core/base.html' %}
 
 {% block header %}
-    App Productos: Borrar Categoría de Productos
+    App Productos: Borrar Marca
 {% endblock header %}
 
 {% block main %}
-    <p>¿Está seguro que desea borrar el producto "{{ object.name }} {{object.brand}}"?</p>
+    <p>¿Está seguro que desea borrar la Marca "{{ object.name }}"?</p>
     <form method="post">
         {% csrf_token %}
         <button type="submit">Confirmo</button>
     </form>
     <button>
-        <a href="{% url 'productos:product_list' %}">Volver</a>
+        <a href="{% url 'productos:brand_list' %}">Volver</a>
     </button>
 {% endblock main %}

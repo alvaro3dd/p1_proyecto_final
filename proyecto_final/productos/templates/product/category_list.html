@@ -16,7 +16,13 @@
     <ul>
         {% for object in object_list %}
         <li>{{ object.name | upper }}
-        </li>    
+        </li>   
+        
+        <td>
+            <a href="{% url 'productos:category_detail' object.id %}" class="btn btn-info btn-sm">Detalle</a>
+            <a href="{% url 'productos:category_update' object.id %}" class="btn btn-warning btn-sm">Modificar</a>
+            <a href="{% url 'productos:category_delete' object.id %}" class="btn btn-danger btn-sm">Borrar</a>
+        </td>
         {% empty %}
             <p>No hay registros</p>
         {% endfor %}
