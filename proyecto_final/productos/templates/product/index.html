@@ -1,12 +1,23 @@
 {% extends 'core/base.html' %}
 
 {% block header %}
-    Productos  
+    <div class="container text-center mt-4">
+        <h1 class="display-4"><strong>Productos</strong></h1>
+    </div>
 {% endblock header %}
 
-
 {% block main %}
-    <button><a href="{% url 'productos:product_list' %}">Lista de productos</a></button>
-    <button><a href="{% url 'productos:category_list' %}">Lista de Cateogrias</a></button>
-    <button><a href="{% url 'productos:brand_list' %}">Lista de Marcas</a></button>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{% url 'productos:product_list' %}" class="btn btn-primary">
+                <strong>Lista de Productos</strong>
+            </a>
+            <a href="{% url 'productos:category_list' %}" class="btn btn-secondary">
+                <strong>Lista de Categorías</strong>
+            </a>
+            <a href="{% url 'productos:brand_list' %}" class="btn btn-success">
+                <strong>Lista de Marcas</strong>
+            </a>
+        </div>
+    </div>
 {% endblock main %}

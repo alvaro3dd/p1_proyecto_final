@@ -2,6 +2,8 @@
 
 {% load static %}  {# Load static files #}
 
+
+
 {% block header %}
     Detalle del Categorias: {{ brand.name }}
 {% endblock header %}
@@ -14,7 +16,8 @@
             {% if brand.image %}
                 <img src="{{ brand.image.url }}" class="img-fluid rounded" alt="{{ brand.name }}">
             {% else %}
-                <img src="{% static 'img/core/no-image.png' %}" class="img-fluid rounded" alt="No Image Available">
+                <img src="{% static 'core/img/no-image.png' %}" class="img-fluid rounded" alt="No Image Available">
+              
             {% endif %}
         </div>
         <div class="col-md-6">
