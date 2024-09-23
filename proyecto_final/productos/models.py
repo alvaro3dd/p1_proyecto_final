@@ -33,7 +33,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     specs = models.JSONField(null=True, blank=True)  # To store specifications like RAM, Storage, etc.
-    image = models.ImageField(upload_to='product_images/', null=True, blank=True)
+    image = models.ImageField(upload_to='core/img/', null=True, blank=True)
 
     def __str__(self) -> str:
         return f'{self.name} ({self.brand}) ({self.stock_quantity}) ${self.price:.2f}'
