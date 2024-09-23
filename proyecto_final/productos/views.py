@@ -188,7 +188,7 @@ class BrandUpdate(UpdateView):
     from_class = BrandForm
     # context_object_name = 'object'
     template_name = 'product/brand_form.html' ## Preguntar como arreglar
-    success_url = reverse_lazy('productos:category_list')
+    success_url = reverse_lazy('productos:brand_list')
     fields = '__all__' #['name', 'description', 'price'] 
 
 class BrandDelete(DeleteView):

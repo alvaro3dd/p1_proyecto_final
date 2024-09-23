@@ -57,13 +57,9 @@
             <img class="card-img-top" src="{% static 'core/img/tv1.png' %}" alt="..." />
             <div class="card-body p-4">
                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">10% off</div>
-                {% if user.is_authenticated %}
                 <a class="text-decoration-none link-dark stretched-link" href="{% url 'productos:index' %}">
-                    <h5 class="card-title mb-3">Tarjetas de Video</h5>  </a>
-                {% else %}
-                <a class="text-decoration-none link-dark stretched-link" href="{% url 'core:login' %}"></a>
-                    <h5 class="card-title mb-3">Tarjetas de Video</h5>  </a>
-                {% endif %}
+                    <h5 class="card-title mb-3">Tarjetas de Video</h5>
+                </a>
                 <p class="card-text mb-0">Descubre el poder gráfico con nuestras tarjetas de video. Diseñadas para ofrecer un rendimiento excepcional,
                      optimizan tus juegos y aplicaciones con imágenes nítidas y fluidas. ¡Lleva tu experiencia visual al siguiente nivel!</p>
             </div>
@@ -83,14 +79,9 @@
             <img class="card-img-top" src="{% static 'core/img/tv2.png' %}" alt="..." />
             <div class="card-body p-4">
                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">25% off</div>
-                {% if user.is_authenticated %}
                 <a class="text-decoration-none link-dark stretched-link" href="#!">
-                    <h5 class="card-title mb-3">Monitores PC</h5></a>
-                {% else %}
-                <a class="text-decoration-none link-dark stretched-link" href="{% url 'core:login' %}"></a>
-                <h5 class="card-title mb-3">Monitores PC</h5>  </a>
-                {% endif %}
-
+                    <h5 class="card-title mb-3">Monitores PC</h5>
+                </a>
                 <p class="card-text mb-0">Transforma tu espacio de trabajo y juego con nuestras pantallas de PC de alta definición. 
                     Disfruta de colores vibrantes y una claridad asombrosa que elevan tu experiencia visual.
                      ¡Explora nuestra selección y mejora tu productividad y entretenimiento hoy mismo!</p>
@@ -111,13 +102,9 @@
             <img class="card-img-top" src="{% static 'core/img/tv3.png' %}" alt="..." />
             <div class="card-body p-4">
                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">10% off</div>
-                {% if user.is_authenticated %}
                 <a class="text-decoration-none link-dark stretched-link" href="#!">
-                    <h5 class="card-title mb-3">Periféricos</h5></a>
-                {% else %}
-                <a class="text-decoration-none link-dark stretched-link" href="{% url 'core:login' %}"></a>
-                <h5 class="card-title mb-3">Periféricos</h5>  </a>
-                {% endif %}
+                    <h5 class="card-title mb-3">Periféricos</h5>
+                </a>
                 <p class="card-text mb-0">Optimiza tu experiencia de uso con nuestros periféricos de última generación. 
                     Desde teclados y ratones hasta auriculares, cada producto 
                     está diseñado para ofrecerte comodidad y rendimiento excepcionales. ¡Descubre nuestra variedad y lleva tu configuración al siguiente nivel!</p>
