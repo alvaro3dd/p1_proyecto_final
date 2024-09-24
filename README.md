@@ -10,7 +10,7 @@ Alvaro Cancino
 ## Proyecto - Links
 
 Pythonanywhere: https://alvaro3d.pythonanywhere.com
-Video explicación del proyecto: 
+Video explicación del proyecto: https://www.youtube.com/watch?v=lRacTrE1EYo
 
 ## Nombre de la Aplicación
 Giga Computers
