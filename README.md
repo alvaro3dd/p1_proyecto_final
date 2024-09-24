@@ -2,10 +2,19 @@
 
 ## Autor
 
-Alvaro Cancino: [Linkedin](https://www.linkedin.com/in/alvarocancino/)
+Alvaro Cancino 
+
+[Linkedin](https://www.linkedin.com/in/alvarocancino/)
+[Github](https://github.com/alvaro3dd)
+
+## Proyecto - Links
+
+Pythonanywhere: https://alvaro3d.pythonanywhere.com
+Video explicación del proyecto: 
 
 ## Nombre de la Aplicación
 Giga Computers
+
 
 ## Descripción
 Giga Computers es una tienda en línea especializada en la venta de elementos de computación. Ofrece una amplia gama de productos, desde componentes de PC y accesorios, hasta equipos completos y soluciones tecnológicas para profesionales y gamers.
